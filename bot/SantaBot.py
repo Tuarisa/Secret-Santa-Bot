@@ -911,7 +911,7 @@ class SantaBot:
     @staticmethod
     def get_locality(user):
         locality = user.language_code
-        locality = "ru_ru"
+        locality = "ru"
         # if locality not in ["en", "pt-br"]:
         #     locality = "en"
         return locality.replace('-', '_')
