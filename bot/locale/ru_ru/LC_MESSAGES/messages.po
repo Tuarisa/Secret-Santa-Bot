@@ -1,0 +1,240 @@
+# Translations template for Secret-Santa-Bot.
+# This file is distributed under the same license as the Secret-Santa-Bot project.
+# John Elgin <Voxter.256@gmail.com>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1\n"
+"Report-Msgid-Bugs-To: Voxter.256@gmail.com\n"
+"POT-Creation-Date: 2020-10-24 20:56-0400\n"
+"PO-Revision-Date: 2020-10-29 21:32+0100\n"
+"Language-Team: LANGUAGE <Voxter.256@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: ru_RU\n"
+
+#: SantaBot.py:84 SantaBot.py:183
+msgid "You must send me this in a private chat"
+msgstr "Отправь мне сообщение в личку"
+
+#: SantaBot.py:100
+msgid "Hello! Lets get you setup!"
+msgstr "Привет! Начнем!"
+
+#: SantaBot.py:106 SantaBot.py:114 SantaBot.py:206 SantaBot.py:232
+#: SantaBot.py:319
+msgid "What is your address? (Reply to this message to change it)"
+msgstr ""
+"Напиши ответом на это сообщение свои данные (ФИО, адрес, адреса пунктов "
+"выдачи ВБ и Озон), а также пожелания по подарку"
+
+#: SantaBot.py:122
+msgid "You are already set up. I have your address as:"
+msgstr "Все данные уже заполнены:"
+
+#: SantaBot.py:138
+msgid "Command List:"
+msgstr "Список команд:"
+
+#: SantaBot.py:141
+msgid "Sent only in a private message to begin personal setup."
+msgstr "Чтобы начать, отправь эту команду в личку боту."
+
+#: SantaBot.py:144
+msgid "Sent only in a group chat to enable the gift exchange."
+msgstr "Для активации бота отправь эту команду в групповой чат."
+
+#: SantaBot.py:147
+msgid "Sent only in a private message to show and update your address."
+msgstr ""
+"Для того, чтобы посмотреть или обновить свои данные, отправь эту команду в "
+"личку боту."
+
+#: SantaBot.py:150
+msgid "Joins you in the gift exchange in this chat."
+msgstr "Для участия в розыгрыше подарков отправь эту команду в групповой чат."
+
+#: SantaBot.py:153
+msgid "Gets the status of this chat's exchange."
+msgstr "Показывает был ли розыгрыш."
+
+#: SantaBot.py:156
+msgid "Prevents you from being paired up with this participant."
+msgstr "Эта команда запрещает  тебе быть в паре с указанным участником."
+
+#: SantaBot.py:159
+msgid ""
+"Removes block that was preventing you from being paired up with this "
+"participant."
+msgstr ""
+"Снимает ограничение , которое не дает тебе быть в паре с указанным "
+"участником."
+
+#: SantaBot.py:162
+msgid "You will leave the gift exchange in this chat."
+msgstr "Отправь эту команду, если перестал верить в Секретного Санту."
+
+#: SantaBot.py:165
+msgid ""
+"Begins the gift exchange by assigning a recipient to every participant, then "
+"messaging them privately the details."
+msgstr ""
+"Для начала розыгрыша отправь эту команду. Назначает каждому участнику "
+"Тайного Санту."
+
+#: SantaBot.py:169
+msgid ""
+"Resets the gift exchange by removing every participant's assigned recipient."
+msgstr "Для сброса образованных пар Сант отправь эту команду."
+
+#: SantaBot.py:192 SantaBot.py:312
+msgid "Send me a /start in a private message, then follow the instructions!"
+msgstr "Отправь мне /start в личку и следуй инструкциям!"
+
+#: SantaBot.py:197
+msgid "I currently have your address as"
+msgstr "Твои данные уже внесены"
+
+#: SantaBot.py:199
+msgid "If that is correct, you can ignore the following message."
+msgstr "Если все верно, то можешь проигнорировать следующее сообщение."
+
+#: SantaBot.py:245
+msgid "OK, I have added your address as: "
+msgstr "ОК, я добавил твои данные "
+
+#: SantaBot.py:247
+msgid ""
+"You can now to use the /join command in any Telegram Secret Santa group!"
+msgstr ""
+"Теперь ты можешь использовать команду /join в группе Telegram с Секретным "
+"Сантой!"
+
+#: SantaBot.py:248
+msgid "A Telegram Secret Santa group only needs to be activated once."
+msgstr "Секретный Санта может быть активирован только один раз."
+
+#: SantaBot.py:249
+msgid "To do so, I must be a member of a telegram group "
+msgstr "Для этого достаточно добавить меня в группу Telegram "
+
+#: SantaBot.py:250
+msgid "and someone needs to activate me with the command /hello"
+msgstr "и активировать командой /hello"
+
+#: SantaBot.py:263 SantaBot.py:305 SantaBot.py:630
+msgid "You must begin from a group chat"
+msgstr "Отправь эту команду в общий чат"
+
+#: SantaBot.py:279
+msgid "Hello! "
+msgstr "Привет! "
+
+#: SantaBot.py:280
+msgid ""
+"This group chat now has the options of participating in a Secret Santa "
+"Exchange!"
+msgstr "Этот групповой чат теперь может участвовать в Тайном Санте!"
+
+#: SantaBot.py:281
+msgid "/join to participate"
+msgstr "/join для участия"
+
+#: SantaBot.py:317
+msgid "I need your address first! I am sending you a private message now."
+msgstr "Сначала отправь свои данные! Я пришлю тебе сейчас сообщение в личку."
+
+#: SantaBot.py:354 SantaBot.py:638
+msgid "Someone must /hello first!"
+msgstr "Кто-нибудь должен сначала поприветствовать меня командой /hello !"
+
+#: SantaBot.py:360
+msgid "OK, you're in!"
+msgstr "Теперь ты с нами!"
+
+#: SantaBot.py:363
+msgid "You have already joined!"
+msgstr "Ты уже с нами!"
+
+#: SantaBot.py:416 SantaBot.py:442 SantaBot.py:485
+msgid "This blocked pairing has already been added."
+msgstr ""
+"Ограничение на то, чтобы быть в паре с этим участником уже было добавлено."
+
+#: SantaBot.py:419
+msgid "Don't worry, you won't get yourself"
+msgstr "Не беспокойся! Ты не будешь в паре сам с собой"
+
+#: SantaBot.py:439 SantaBot.py:482
+msgid "OK, you can no longer matched with that participant."
+msgstr "Ок, теперь ты не будешь в паре с этим участником."
+
+#: SantaBot.py:462
+msgid "This participant needs to join first"
+msgstr "Этот участник должен сначала присоединиться"
+
+#: SantaBot.py:543 SantaBot.py:588
+msgid "You can now be assigned to "
+msgstr "Теперь ты можешь быть назначен "
+
+#: SantaBot.py:548 SantaBot.py:593
+msgid " was not blocked by you."
+msgstr " не был заблокирован тобой."
+
+#: SantaBot.py:608
+msgid "You never joined"
+msgstr "Ты еще не присоединился"
+
+#: SantaBot.py:614
+msgid "Done."
+msgstr "Готово."
+
+#: SantaBot.py:645
+msgid "The exchange has finished"
+msgstr "Розыгрыш окончен"
+
+#: SantaBot.py:647
+msgid "The exchange has not begun"
+msgstr "Розыгрыш еще не начался"
+
+#: SantaBot.py:652
+msgid "Joined Users:"
+msgstr "Добавленые пользователи:"
+
+#: SantaBot.py:680
+msgid "Cannot pair with: "
+msgstr "Не получается образовать пару с: "
+
+#: SantaBot.py:703
+msgid "No one has Joined!"
+msgstr "Никто не присоединился!"
+
+#: SantaBot.py:707
+msgid "The exchange has already been setup!"
+msgstr "Розыгрыш уже был проведен!"
+
+#: SantaBot.py:756
+msgid "Matching Impossible: 0 Permutations"
+msgstr "Совпадение невозможно: 0 перестановок"
+
+#: SantaBot.py:781
+msgid "You got"
+msgstr "Тебе достался"
+
+#: SantaBot.py:785
+msgid "Their address is"
+msgstr "Его адрес"
+
+#: SantaBot.py:806
+msgid "Messages have been sent!"
+msgstr "Сообщения отправлены!"
+
+#: SantaBot.py:821
+msgid "All pairings have been reset"
+msgstr "Все пары были сброшены"
