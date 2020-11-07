@@ -251,6 +251,29 @@ class SantaBot:
                     _("and someone needs to activate me with the command /hello")  # noqa: E501
                 )
                 self.reply_message(update=update, text=message)
+                group_participants_objects = (
+                    self.session
+                    .query(Participant)
+                    .join(Participant.link_receiver)
+                    .join(Group)
+                    .filter(
+                        Participant.telegram_id == update.effective_user.id
+                    )
+                    .all()
+                )
+                for group_participant in group_participants_objects:
+                    for santa_link in group_participant.link_receiver:
+                        santa = self.session.query(Participant).get(santa_link.santa_id)
+                        you_got = _("Your receiver change address")
+                        youGotUsername = f"{you_got}"  # noqa: E501
+                        their_address_is = _("Their address is")
+                        youGotAddress = f"{their_address_is}: {new_address}"
+                        message = f"{you_got} {youGotAddress}"
+                        self.send_message(
+                            context=context,
+                            chat_id=santa.telegram_id,
+                            text=message,
+                            )
         except Exception as this_ex:
             logging.exception(this_ex)
 
