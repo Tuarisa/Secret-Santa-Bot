@@ -46,6 +46,7 @@ class SantaBot:
             CommandHandler('help', self.help),
             CommandHandler('hello', self.hello),
             CommandHandler('address', self.show_address),
+            CommandHandler('request_address', self.request_address),
             CommandHandler('join', self.join),
             CommandHandler('not', self.not_command),
             CommandHandler('allow', self.allow),
@@ -146,6 +147,9 @@ class SantaBot:
 
             "/address \n" +
             _("Sent only in a private message to show and update your address.") + "\n" +  # noqa: E501
+
+            "/request_address \n" +
+            _("Sent only in a private message to request address details of your receiver") + "\n" +  # noqa: E501
 
             "/join \n" +
             _("Joins you in the gift exchange in this chat.") + "\n" +  # noqa: E501
@@ -276,6 +280,67 @@ class SantaBot:
                             )
         except Exception as this_ex:
             logging.exception(this_ex)
+
+    def request_address(self, update: Update, context: CallbackContext):
+        try:
+            if self.checkUpdateAgeExpired(update):
+                return
+            logging.info(
+                "request_address | "
+                f"This Participant's Telegram ID: {update.effective_user.id}")
+            chat_type = update.effective_chat.type
+            _ = self.gettext_translation(update.effective_user)
+            if chat_type != "private":
+                message = _("You must send me this in a private chat")
+                self.reply_message(update=update, text=message)
+                return
+            user_id = update.effective_user.id
+            # user_username = update.effective_user.username
+
+            this_participant = self.session.query(Participant).filter(
+                Participant.telegram_id == user_id).first()
+            if this_participant is None:
+                message = _("Send me a /start in a private message, then follow the instructions!")  # noqa: E501
+                self.reply_message(update=update, text=message)
+                return
+            else:
+                group_participants_objects = (
+                    self.session
+                    .query(Participant)
+                    .join(Participant.link_santa)
+                    .join(Group)
+                    .filter(
+                        Participant.telegram_id == update.effective_user.id
+                    )
+                    .all()
+                )
+                for group_participant in group_participants_objects:
+                    for santa_link in group_participant.link_santa:
+                        reciever = self.session.query(Participant).get(santa_link.receiver_id)
+                        ask = _("Your santa ask details of your address")
+                        message = f"{ask}"
+                        self.send_message(
+                            context=context,
+                            chat_id=reciever.telegram_id,
+                            text=message,
+                            )
+                        message_ask = _("What is your address? (Reply to this message to change it)")  # noqa: E501
+                        self.send_message(
+                            context=context,
+                            chat_id=reciever.telegram_id,
+                            text=message_ask,
+                            reply_markup=ForceReply(),
+                            )
+                        chatInfo = update.effective_chat
+                        message_to_user = (
+                            _("User with address") + "\n" + "=====" + '\n' + 
+                            reciever.address + "\n" + "=====" + '\n' + 
+                            _("recieved your question") + "\n"
+                        )
+                        self.reply_message(update=update, text=message_to_user)
+        except Exception as this_ex:
+            logging.exception(this_ex)
+
 
     def hello(self, update: Update, context: CallbackContext):
         try:
