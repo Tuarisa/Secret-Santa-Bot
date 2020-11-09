@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: Voxter.256@gmail.com\n"
 "POT-Creation-Date: 2020-10-24 20:56-0400\n"
-"PO-Revision-Date: 2020-11-08 12:37+0100\n"
+"PO-Revision-Date: 2020-11-09 13:09+0100\n"
 "Language-Team: LANGUAGE <Voxter.256@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -252,9 +252,31 @@ msgid "Your santa ask details of your address"
 msgstr ""
 "Твой санта просит уточнить адрес и телефон. Представленных данных недостаточно "
 "для того, чтобы посылка дошла до получателя, укажи, пожалуйста, максимально "
-"подробно. "
+"подробно"
 
 #: SantaBot.py
 msgid "Sent only in a private message to request address details of your receiver"
 msgstr ""
 "Отправь в личные сообщения чтобы запросить у своего адресата детали адреса"
+
+#: SantaBot.py
+msgid "What is your message? (Reply to this message to send it)"
+msgstr ""
+"Что ты хочешь сообщить? Напиши ответом на это сообщение. Например, код WB, "
+"номер заказа, адрес пункта выдачи или другие детали необходимые для получения "
+"заказа. Или просто напиши, что заказ в пути и предполагаемую дату."
+
+#: SantaBot.py
+msgid "recieved your notification"
+msgstr "получил(а) твое сообщение"
+
+#: SantaBot.py
+msgid "Sent only in a private message to notify your receiver"
+msgstr ""
+"Отправь в личные сообщения чтобы отправить адресату сообщение анонимно (код от "
+"WB, детали, которые нужны для получения посылки, дополнительные вопросы по "
+"адресу)"
+
+#: SantaBot.py
+msgid "Your santa send you notification"
+msgstr "Твой санта отправил тебе сообщение"
