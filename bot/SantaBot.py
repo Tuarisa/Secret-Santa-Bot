@@ -55,6 +55,7 @@ class SantaBot:
             CommandHandler('status', self.status),
             CommandHandler('start_exchange', self.start_exchange),
             CommandHandler('reset_exchange', self.reset_exchange),
+            CommandHandler('reset_game', self.reset_game),
             MessageHandler(Filters.reply & Filters.text, self.replyHandler)
         ]
 
@@ -1028,6 +1029,21 @@ class SantaBot:
             group_link.receiver_id = None
         self.session.commit()
         message = _("All pairings have been reset")
+        self.reply_message(update=update, text=message)
+
+    def reset_game(self, update: Update, context: CallbackContext):
+        if self.checkUpdateAgeExpired(update):
+            return
+        _ = self.gettext_translation(update.effective_user)
+        this_group_id = update.effective_chat.id
+        group_links = self.session.query(Link).join(Link.santa).join(Group)\
+                .filter(Group.telegram_id == update.effective_chat.id)
+        for group_link in group_links:
+            self.session.query()
+            self.session.delete(group_link)
+            self.session.commit()
+        self.session.commit()
+        message = _("All participants have been reset")
         self.reply_message(update=update, text=message)
 
     @classmethod
